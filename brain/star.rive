@@ -1,0 +1,110 @@
+! version = 2.0
+
+> begin
+	+ request // This trigger is tested first.
+	- {ok}    // An {ok} in the response means it's okay to get a real reply
+< begin
+
+! sub agradeco = agradeço
+! sub alo = alô
+! sub amanha = amanhã
+! sub t = até
+! sub avaliacao = avaliação
+! sub avaliacão = avaliação
+! sub blz = beleza
+! sub bj = beijo
+! sub bjs = beijos
+! sub baum = bom
+! sub bowa = boa
+// brigado tem outro sentido não substituir
+! sub kct = cacete
+! sub caraleo = caralho
+! sub caralio = caralho
+! sub carai = caralho
+! sub cmg = comigo
+! sub desgraca = desgraça
+! sub desgracado = desgraçado
+! sub desgracados = desgraçados
+! sub duracao = duração
+! sub eh = é
+! sub esforcado = esforçado
+! sub entao = então
+! sub estao = estão
+! sub estupida = estúpida
+! sub estupido = estúpido
+! sub faco = faço
+! sub flw = falou
+! sub fantastico = fantástico
+! sub fantasticos = fantásticos
+! sub fds = final de semana
+! sub phoda = foda
+! sub phodas = fodas
+! sub historia = história
+! sub horrivel = horrível
+! sub horriveis = horríveis
+! sub indicacao = indicação
+! sub inutil = inútil
+! sub inuteis = inúteis
+! sub jóia = joia // perdeu acento
+! sub la = lá
+! sub lancada = lançada
+! sub lancado = lançado
+! sub lancamento = lançamento
+! sub lancou = lançou
+! sub levara = levará
+! sub levarao = levarão
+! sub mongoloide = mongolóide
+! sub mongoloides = mongolóides
+! sub mongois = mongóis
+! sub mta = muita
+! sub mto = muito
+! sub nao = não
+! sub nun = não
+! sub num = não
+! sub nn = não
+! sub oq = o que
+! sub ola = olá
+! sub otario = otário
+! sub otarios = otários
+! sub otimo = ótimo
+! sub otimos = ótimos
+! sub pra = para
+! sub parabens = parabéns
+! sub perdao = perdão
+! sub pessimo = péssimo
+! sub pessimos = péssimos
+! sub pq = porque
+! sub pqp = puta que pariu
+! sub q = que
+! sub ql = qual
+! sub qm = quem
+! sub recomendacao = recomendação
+! sub responsavel = responsável
+! sub sabio = sábio
+! sub sao = são
+! sub saudacao = saudação
+! sub saudaćão = saudação
+! sub saudacoes = saudações
+! sub sera = será
+! sub serao = serão
+! sub simpatico = simpático
+! sub sugestao = sugestão
+! sub tb = também
+! sub tbm = também
+! sub tera = terá
+! sub terao = terão
+! sub xau = tchau
+! sub trocha = trouxa
+! sub troucha = trouxa
+! sub troxa = trouxa
+! sub trouchas = trouxas
+! sub trouxas = trouxas
+! sub td = tudo
+! sub tdb = tudo de bom
+! sub vlw = valeu
+! sub c = você
+! sub vc = você
+! sub voce = você
+
++ *
+- <star1>
