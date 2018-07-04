@@ -39,11 +39,11 @@ Rodar os comandos:
 .. code-block:: sh
 
   # gerar a imagem
-  sudo docker build -t staticdev/rivenorm:0.1.1 .
+  sudo docker build -t staticdev/rivenorm:0.1.2 .
   # verificar se gerou
   sudo docker images
   # instanciar imagem
-  sudo docker run --name rivenorm -d -p 6000:5000 rivenorm
+  sudo docker run --name rivenorm -d -p 6000:5000 staticdev/rivenorm:0.1.2
   # conferir processo rodando
   sudo docker ps -a
   
