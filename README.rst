@@ -6,7 +6,7 @@ Webservice REST para normalizar mensagens usando Rivescript
 Instalar Docker-CE
 ~~~~~~~~~~~~~~~~~~
 
-Versão 17.06.0+
+Requisito mínimo: Versão 18.03.1+
 
 .. code-block:: sh
 
@@ -39,7 +39,7 @@ Rodar os comandos:
 .. code-block:: sh
 
   # gerar a imagem
-  sudo docker build -t rivenorm .
+  sudo docker build -t staticdev/rivenorm:0.1.1 .
   # verificar se gerou
   sudo docker images
   # instanciar imagem
