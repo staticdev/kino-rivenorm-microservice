@@ -39,18 +39,18 @@ Rodar os comandos:
 .. code-block:: sh
 
   # gerar a imagem
-  sudo docker build -t staticdev/rivenorm:0.1.2 .
+  sudo docker build -t staticdev/rivenorm:1.0.0a .
   # verificar se gerou
   sudo docker images
   # instanciar imagem
-  sudo docker run --name rivenorm -d -p 6000:5000 staticdev/rivenorm:0.1.2
+  sudo docker run --name rivenorm -d -p 6000:5000 staticdev/rivenorm:1.0.0a
   # conferir processo rodando
   sudo docker ps -a
   
-  # para parar o container olhe o nome dele no docker ps -a e execute
-  sudo docker stop NOMEDOCONTAINER
+  # para parar o container
+  sudo docker stop rivenorm
   # para remover um container (precisa parar primeiro)
-  sudo docker rm NOMEDOCONTAINER
+  sudo docker rm rivenorm
 
 Exemplos de uso
 ---------------
@@ -67,7 +67,8 @@ Exemplo curl:
     http://localhost:6000/reply \
     -H 'content-type: application/json; charset=utf-8' \
     -d '{
-      "message": "oi td bm?"
+      "message": "oi td bm?",
+      "username": "dummy"
   }'
 
 Exemplo python3 nativo (http.client):
@@ -78,7 +79,7 @@ Exemplo python3 nativo (http.client):
 
   conn = http.client.HTTPConnection("localhost:6000")
 
-  payload = "{\"message\": \"oi td bm?\"}"
+  payload = "{\"message\": \"oi td bm?\", \"username\": \"dummy\"}"
 
   headers = {
       'content-type': "application/json; charset=utf-8"

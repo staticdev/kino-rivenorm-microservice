@@ -1,4 +1,4 @@
-FROM python:3.5.4-alpine
+FROM python:3.6.6-alpine
 
 # Set the working directory to /app
 WORKDIR /app
@@ -12,4 +12,4 @@ RUN pip install -r requirements.txt
 EXPOSE 5000
 
 # Run app.py when the container launches
-CMD ["gunicorn", "app:APP", "-b", ":5000"]
+CMD ["gunicorn", "__init__:create_app()", "-b", ":5000"]
