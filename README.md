@@ -38,11 +38,11 @@ Rodar os comandos:
 
 ``` {.sourceCode .sh}
 # gerar a imagem
-sudo docker build -t staticdev/rivenorm:1.0.0 .
+sudo docker build -t staticdev/rivenorm:1.0.1 .
 # verificar se gerou
 sudo docker images
 # instanciar imagem
-sudo docker run --name rivenorm -d -p 6000:5000 staticdev/rivenorm:1.0.0
+sudo docker run --name rivenorm -d -p 6000:5000 staticdev/rivenorm:1.0.1
 # conferir processo rodando
 sudo docker ps -a
 
