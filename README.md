@@ -1,10 +1,8 @@
-kino-rivenorm-microservice
-==========================
+# kino-rivenorm-microservice
 
 Webservice REST para normalizar mensagens usando Rivescript
 
-Instalar Docker-CE
-------------------
+## Instalar Docker-CE
 
 Requisito mínimo: Versão 18.03.1+
 
@@ -31,8 +29,7 @@ sudo apt-get install docker-ce
 docker --version # test installation
 ```
 
-Subir o serviço
----------------
+## Subir o serviço
 
 Rodar os comandos:
 
