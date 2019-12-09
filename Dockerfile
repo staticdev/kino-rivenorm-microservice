@@ -12,4 +12,4 @@ RUN pip install -r requirements.txt
 EXPOSE 5000
 
 # Run app.py when the container launches
-CMD ["gunicorn", "__init__:create_app()", "-b", ":5000"]
+CMD ["gunicorn", "app:create_app()", "-b", ":5000"]

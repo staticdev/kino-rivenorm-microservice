@@ -1,10 +1,13 @@
 # -*- coding: utf-8 -*-
-from sys import argv
-from flask import Flask, request, jsonify
+
+""" Microservice for RiveNorm normalization method """
+
+import flask
 from rivescript import RiveScript
 
 
-def create_app(test_config=None):
+def create_app():
+    """ Application factory """
     bot = RiveScript(
         debug=True,
         utf8=True
@@ -13,7 +16,7 @@ def create_app(test_config=None):
     bot.load_directory("brain")
     bot.sort_replies()
 
-    app = Flask(__name__)
+    app = flask.Flask(__name__)
     app.config['JSON_AS_ASCII'] = False  # retrieve UTF-8 messages
 
     @app.route('/reply', methods=['POST'])
@@ -22,36 +25,29 @@ def create_app(test_config=None):
         Parameters (JSON):
         * username
         * message
-        * vars
         """
-        params = request.json
+        params = flask.request.json
         if not params:
-            return jsonify({
+            return flask.jsonify({
                 "status": "error",
                 "error": "Request must be of the application/json type!",
             })
 
         username = params.get("username")
         message = params.get("message")
-        uservars = params.get("vars", dict())
 
         # Make sure the required params are present.
         if username is None or message is None:
-            return jsonify({
+            return flask.jsonify({
                 "status": "error",
                 "error": "username and message are required keys",
             })
-
-        # Copy and user vars from the post into RiveScript.
-        if type(uservars) is dict:
-            for key, value in uservars.items():
-                bot.set_uservar(username, key, value)
 
         # Get a reply from the bot.
         reply = bot.reply(username, message)
 
         # Send the response.
-        return jsonify({
+        return flask.jsonify({
             "status": "ok",
             "reply": reply
         })

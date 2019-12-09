@@ -35,11 +35,11 @@ Rodar os comandos:
 
 ``` {.sourceCode .sh}
 # gerar a imagem
-sudo docker build -t staticdev/rivenorm:1.0.4 .
+sudo docker build -t staticdev/rivenorm:1.0.5 .
 # verificar se gerou
 sudo docker images
 # instanciar imagem
-sudo docker run --name rivenorm -d -p 6000:5000 staticdev/rivenorm:1.0.4
+sudo docker run --name rivenorm -d -p 6000:5000 staticdev/rivenorm:1.0.5
 # conferir processo rodando
 sudo docker ps -a
 
@@ -48,7 +48,7 @@ sudo docker stop rivenorm
 # para remover um container (precisa parar primeiro)
 sudo docker rm rivenorm
 # para deletar a imagem
-sudo docker rmi staticdev/rivenorm:1.0.4
+sudo docker rmi staticdev/rivenorm:1.0.5
 ```
 
 ### Exemplos de uso
