@@ -39,7 +39,7 @@ sudo docker build -t staticdev/rivenorm:1.0.7 .
 # verificar se gerou
 sudo docker images
 # instanciar imagem
-sudo docker run --name rivenorm -d -p 6000:5000 staticdev/rivenorm:1.0.7
+sudo docker run --name rivenorm -d -p 5000:5000 staticdev/rivenorm:1.0.7
 # conferir processo rodando
 sudo docker ps -a
 
