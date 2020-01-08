@@ -6,7 +6,7 @@ Webservice REST para normalizar mensagens usando Rivescript
 
 Requisito mínimo: Versão 18.03.1+
 
-``` {.sourceCode .sh}
+```sh
 sudo apt remove docker docker-engine docker.io
 sudo apt-get install \
 apt-transport-https \
@@ -33,13 +33,13 @@ docker --version # test installation
 
 Rodar os comandos:
 
-``` {.sourceCode .sh}
+```sh
 # gerar a imagem
-sudo docker build -t staticdev/rivenorm:1.0.5 .
+sudo docker build -t staticdev/rivenorm:1.0.7 .
 # verificar se gerou
 sudo docker images
 # instanciar imagem
-sudo docker run --name rivenorm -d -p 6000:5000 staticdev/rivenorm:1.0.5
+sudo docker run --name rivenorm -d -p 6000:5000 staticdev/rivenorm:1.0.7
 # conferir processo rodando
 sudo docker ps -a
 
@@ -48,7 +48,7 @@ sudo docker stop rivenorm
 # para remover um container (precisa parar primeiro)
 sudo docker rm rivenorm
 # para deletar a imagem
-sudo docker rmi staticdev/rivenorm:1.0.5
+sudo docker rmi staticdev/rivenorm:1.0.7
 ```
 
 ### Exemplos de uso
@@ -61,9 +61,9 @@ requisição no campo "status", tendo com valor padrão para sucesso "ok".
 
 Exemplo curl:
 
-``` {.sourceCode .sh}
+```sh
 curl -X POST \
-  http://localhost:6000/reply \
+  http://localhost:5000/reply \
   -H 'content-type: application/json; charset=utf-8' \
   -d '{
     "message": "oi td bm?",
@@ -76,7 +76,7 @@ Exemplo python3 nativo (http.client):
 ``` {.sourceCode .python}
 import http.client
 
-conn = http.client.HTTPConnection("localhost:6000")
+conn = http.client.HTTPConnection("localhost:5000")
 
 payload = "{\"message\": \"oi td bm?\", \"username\": \"dummy\"}"
 
