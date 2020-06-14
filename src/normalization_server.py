@@ -1,7 +1,7 @@
 # -*- coding: utf-8 -*-
 """Microservice for RiveNorm normalization method."""
-from concurrent import futures
 import logging
+from concurrent import futures
 
 import grpc
 import rivescript
@@ -30,10 +30,7 @@ class NormalizationServicer(normalization_pb2_grpc.NormalizationServicer):
     """Provides methods that implement functionality of normalization server."""
 
     def __init__(self):
-        self.normaliser = rivescript.RiveScript(
-            debug=True,
-            utf8=True
-        )
+        self.normaliser = rivescript.RiveScript(debug=True, utf8=True)
         self.normaliser.load_directory("brain")
         self.normaliser.sort_replies()
 
@@ -50,7 +47,7 @@ def serve() -> None:
     normalization_pb2_grpc.add_NormalizationServicer_to_server(
         NormalizationServicer(), server
     )
-    server.add_insecure_port('[::]:50051')
+    server.add_insecure_port("[::]:50051")
     server.start()
     server.wait_for_termination()
 
