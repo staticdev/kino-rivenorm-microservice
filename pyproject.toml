@@ -1,7 +1,7 @@
 [tool.poetry]
 name = "kino-rivenorm-microservice"
 version = "2.0.0"
-description = "Enelvo pt_BR normalizer microservice."
+description = "Webservice REST para normalizar mensagens usando Rivescript."
 authors = ["Thiago Carvalho D'Ávila <thiagocavila@gmail.com>"]
 license = "MIT"
 readme = "README.md"
