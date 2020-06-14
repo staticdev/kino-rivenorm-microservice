@@ -1,15 +1,26 @@
-FROM python:3.7.6-alpine
+FROM python:3.8.3-slim-buster
+
+ENV PYTHONFAULTHANDLER=1 \
+  PYTHONUNBUFFERED=1 \
+  PYTHONHASHSEED=random \
+  PIP_NO_CACHE_DIR=off \
+  PIP_DISABLE_PIP_VERSION_CHECK=on \
+  PIP_DEFAULT_TIMEOUT=100 \
+  POETRY_VERSION=1.0.9
 
 # Set the working directory to /app
 WORKDIR /app
 
-# Copy the current directory contents into the container at /app
-COPY . /app
+COPY poetry.lock pyproject.toml /app/
 
-# install requirements
-RUN pip install -r requirements.txt
+RUN pip install "poetry==$POETRY_VERSION" \
+  && poetry config virtualenvs.create false \
+  && poetry install --no-dev
 
-EXPOSE 5000
+# copy the current directory contents into the container at /app
+COPY src/ /app/
+
+EXPOSE 50051
 
 # Run app.py when the container launches
-CMD ["gunicorn", "app:create_app()", "-b", ":5000"]
+CMD ["python", "normalization_server.py"]
