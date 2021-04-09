@@ -12,7 +12,7 @@ repository = "https://github.com/staticdev/enelvo-microservice"
 python = "^3.8"
 rivescript = "^1.15.0"
 grpcio = "^1.36.1"
-protobuf = "^3.15.6"
+protobuf = "^3.15.8"
 
 [tool.poetry.dev-dependencies]
 
